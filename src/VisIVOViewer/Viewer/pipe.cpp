@@ -31,6 +31,7 @@
 #include "vtkRenderWindow.h"
 #include "vtkCamera.h"
 #include "vtkRenderer.h"
+#include "vtkMPIController.h"
 #include "vtkLookupTable.h"
 #include "vtkPolyData.h"
 
@@ -73,7 +74,6 @@ void Pipe::constructVTK()
 	m_pRenderer     = vtkRenderer::New();
 	m_lut           = vtkLookupTable::New();
 	m_pRenderWindow = vtkRenderWindow::New();
-
  
 
 

@@ -43,13 +43,12 @@ int main(int argc, char*argv[])
     char processor_name[MPI_MAX_PROCESSOR_NAME];
     int name_len;
     MPI_Get_processor_name(processor_name, &name_len);
-    
     // Print off a hello world message
     printf("Hello world from processor %s, rank %d out of %d processors\n",
            processor_name, rank, size);
     
-    vtkGraphicsFactory::SetOffScreenOnlyMode( 1);
-    vtkGraphicsFactory::SetUseMesaClasses( 1 );
+    //vtkGraphicsFactory::SetOffScreenOnlyMode( 1);
+    //vtkGraphicsFactory::SetUseMesaClasses( 1 );
     
     
     OptionsSetter *pOptSett= new OptionsSetter();
@@ -77,7 +76,7 @@ int main(int argc, char*argv[])
     
     pOptSett->readData();
     pOptSett->images();
-    
+    std::clog << "After images()" << std::endl;
     pOptSett->writeHistory();
     
     if ( pOptSett!=0)
@@ -85,7 +84,7 @@ int main(int argc, char*argv[])
     
     
     //    MPI_Barrier(MPI_COMM_WORLD);
-    MPI_Finalize();
+    //MPI_Finalize();
     
     return 0;
 }

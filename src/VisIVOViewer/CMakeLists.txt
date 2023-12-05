@@ -89,6 +89,7 @@ find_package(VTK 9.1.0 REQUIRED COMPONENTS
     ogg
     ParallelCore
     ParallelDIY
+    ParallelMPI
     RenderingAnnotation
     RenderingContext2D
     RenderingCore
@@ -97,9 +98,8 @@ find_package(VTK 9.1.0 REQUIRED COMPONENTS
     RenderingGL2PSOpenGL2
     RenderingImage
     RenderingLabel
-    RenderingLOD
+    RenderingParallel
     RenderingOpenGL2
-    RenderingUI
     RenderingVolume
     RenderingVolumeOpenGL2
     sqlite

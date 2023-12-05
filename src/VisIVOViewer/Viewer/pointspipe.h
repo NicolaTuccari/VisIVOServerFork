@@ -24,6 +24,7 @@
 
 #include "pipe.h"
 #include "optionssetter.h"
+#include "vtkMPIController.h"
 
 class vtkActor;
 class vtkSphereSource;
@@ -41,14 +42,13 @@ class vtkConeSource;
     class PointsPipe: public Pipe
 {
   public:
-    PointsPipe( VisIVOServerOptions options);
+    PointsPipe( VisIVOServerOptions options, vtkMPIController* contr, int n);
     ~PointsPipe();
    
   protected:
    
    int createPipe();
    void destroyAll();
-   
 
 
   private:
@@ -68,7 +68,8 @@ class vtkConeSource;
     vtkCylinderSource   *m_cylinder;
     vtkCubeSource   *m_cube;
     vtkPoints *m_points;
-    
+    vtkMPIController  *m_pController;
+    int num;
     ExtendedGlyph3D *m_glyphFilter;
 
         
